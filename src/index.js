@@ -7,6 +7,11 @@ const app = express();
 
 app.use(cors());
 
+// use built in middleware to access HTTP POST payload Express version 4.16x
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 app.get('/', (req, res) => {
   res.send('\n\nDistance Traker Microservice default route!\n\n');
 });
