@@ -73,6 +73,7 @@ app.get('/users/:userId', (req, res) => {
     const id = uuidv4();
     const message = {
       id,
+      text: req.body.text,
     }
     message[id] = message;
     return res.send(message);
